@@ -1,0 +1,16 @@
+<?page title="Pos-Online"?>
+<zk:bootstrap/>
+<zk:grails>
+
+    <window apply="pos.project.BilledComposer" visible="false">
+        
+        <hbox align="center">
+            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
+            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+        </hbox>
+
+        <vbox id="scaffoldingBox"/>
+
+    </window>
+
+</zk:grails>

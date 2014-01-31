@@ -1,0 +1,80 @@
+<?page title="Pos-Online"?>
+<zk:bootstrap/>
+<zk:grails>
+    <include mode="defer" src="/index.zul" />
+    <window apply="pos.project.GencardComposer" visible="false">
+        <div align="center" >
+            <grid>
+                <columns>
+                    <column label="กรอกรายละเอียดสร้างบัตรใหม่" align="center" />
+                </columns>
+                <rows>
+                </rows>
+            </grid>
+            <grid>
+                <columns>
+                    <column align="right" />
+                    <column align="left" />
+                    <column align="right" />
+                    <column align="left" />
+                    <column align="right" />
+                    <column align="left" />
+                    <column align="right" />
+                    <column align="left" />
+                </columns>
+                <rows>
+                    <row>
+                        <label value="วันที่ออกบัตร"/>
+                        <datebox id="imday" locale="de_DE" format="dd/MM/yyyy"/>
+                        <label value="วันหมดอายุ"/>
+                        <datebox id="extday" locale="de_DE" format="dd/MM/yyyy"/>
+                         <label value="กรอกจำนวนเงิน"/>
+                        <hbox>
+                            <intbox id="bath" instant="true"/>
+                            <label value="บาท"/>
+                        </hbox>
+                        <label value="กรอกจำนวนบัตร"/>
+                        <hbox>
+                            <intbox id="countcard" instant="true"/>
+                            <label value="ใบ"/>
+                        </hbox>
+                    </row>
+                </rows>
+            </grid>
+            <hbox>
+                <button id="save" label="บันทึก" image="/ext/images/icon/save.png" mold="trendy" />
+                <button id="clear" label="ยกเลิก" image="/ext/images/icon/cancle.png" mold="trendy" />
+            </hbox>
+            <h:br />
+            <h:hr />
+            <hbox id="controlist">
+                <label value="เลือกรายการที่จะแสดง"/>
+                <combobox id="listmode" fulfill="onOpen" placeholder="เลือกราคา"/>
+                <label value=" หรือ "/>
+                <combobox id="listmode2" fulfill="onOpen" placeholder="เลือกวันหมดอายุ"/>
+                <button label="เลือกทั้งหมด" id="checkall" disabled="true" image="/ext/images/icon/checkall.png" mold="trendy" />
+                <button label="ลบ" id="delete" disabled="true" image="/ext/images/icon/cancle.png" mold="trendy" />
+            </hbox>
+            <grid>
+                <columns>
+                    <column label="แสดงรายการบัตรส่วนลด" align="center"/>
+                </columns>
+                <rows>
+                </rows>
+            </grid>
+            <grid id="listcard" mold="paging" pageSize="20">
+                <columns>
+                    <column align="center" label="ลำดับ" sort="auto"/>
+                    <column align="center" label="ชื่อผู้สร้างบัตร" sort="auto"/>
+                    <column align="center" label="วันออกบัตร" sort="auto"/>
+                    <column align="center" label="วันหมดอายุ" sort="auto"/>
+                    <column align="center" label="รหัสบัตร" sort="auto"/>
+                    <column align="center" label="ราคา"/>
+                </columns>
+                <rows>
+
+                </rows>
+            </grid>
+        </div>
+    </window>
+</zk:grails>

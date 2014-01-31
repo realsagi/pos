@@ -1,0 +1,77 @@
+<?page title="Pos-Online"?>
+<zk:bootstrap/>
+<zk:grails>
+    <window apply="pos.project.NewemployeeComposer" visible="false">
+        <div align="center">
+            <grid>
+                <columns>
+                    <column label="เพิ่มพนักงานใหม่" align="center" />
+                </columns>
+                <rows>
+                </rows>
+            </grid>
+            <grid sclass="GridLayoutNoBorder">
+                <columns>
+                    <column align="right" />
+                    <column align="left" />
+                    <column align="right" />
+                    <column align="left" />
+                </columns>
+                <rows>
+                    <row>
+                        <label value="รหัสพนักงาน*"/>
+                        <textbox id="emid" instant="true"/>
+                        <label value="รหัสผ่าน*"/>
+                        <textbox id="passem" instant="true"/>
+                    </row>
+                    <row>
+                        <label value="ชื่อพนักงาน*" />
+                        <textbox id="nameem"/>
+                        <label value="เลขบัตรประชาชน*"/>
+                        <textbox id="numpeople"/>
+                    </row>
+                    <row>
+                        <label value="กลุ่มพนักงาน*"/>
+                        <combobox id="listmode" fulfill="onOpen" placeholder="เลือกกลุ่มพนักงาน"/>
+                        <label value="ที่อยู่*"/>
+                        <textbox id="address"/>
+                    </row>
+                    <row>
+                        <label value="เบอร์โทรศัพท์*"/>
+                        <textbox id="tel"/>
+                        <label value="อื่น"/>
+                        <textbox id="other"/>
+                    </row>
+                </rows>
+            </grid>
+            <h:br />
+            <hbox>
+                <button id="save" image="/ext/images/icon/save.png" mold="trendy" />
+                <button id="cancle" image="/ext/images/icon/cancle.png" mold="trendy" />
+            </hbox>
+            <h:hr />
+            <combobox id="listmode2" fulfill="onOpen" placeholder="เลือกกลุ่มพนักงาน"/>
+            <h:br />
+            <h:br />
+            <grid>
+                <columns>
+                    <column label="แสดงรายชื่อตามกลุ่ม" align="center"/>
+                </columns>
+                <rows>
+                </rows>
+            </grid>
+            <grid id="listem">
+                <columns>
+                    <column align="center" label="รหัสพนักงาน"/>
+                    <column align="center" label="ชื่อพนักงาน"/>
+                    <column align="center" label="รหัสผ่าน"/>
+                    <column align="center" label="กลุ่มพนักงาน"/>
+                    <column align="center"/>
+                </columns>
+                <rows>
+                </rows>
+            </grid>
+        </div>
+
+    </window>
+</zk:grails>

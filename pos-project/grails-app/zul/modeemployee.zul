@@ -1,0 +1,80 @@
+<?page title="Pos-Online"?>
+<zk:bootstrap/>
+<zk:grails>
+    <include mode="defer" src="/index.zul" />
+    <tabbox id="tb">
+        <tabs id="tabs">
+            <tab id="A" label="เพิ่มกลุ่มพนักงานใหม่" />
+            <tab id="B" label="เพิ่มพนักงานใหม่" />
+            <tab id="C" label="เพิ่มกลุ่มลูกค้า" />
+            <tab id="D" label="เพิ่มลูกค้าใหม่" />
+        </tabs>
+        <tabpanels>
+            <tabpanel>
+                <window apply="pos.project.ModeemployeeComposer" visible="false">
+                    <div align="center">
+                        <grid>
+                            <columns>
+                                <column label="เพิ่มกลุ่มพนักงานใหม่" align="center"/>
+                            </columns>
+                            <rows>
+                            </rows>
+                        </grid>
+                        <grid>
+                            <columns>
+                                <column label="ใส่ชื่อกลุ่มพนักงาน" width="15%" align="center"/>
+                                <column label="สิทธิ์การใช้งาน" width="75%" align="center"/>
+                                 <column width="10%" label="บันทึก" align="center"/>
+                            </columns>
+                            <rows>
+                                <row style="font-size:14px;font-weight:bold;color:black;background:pink;">
+                                    <textbox id="namegroup"/>
+                                    <hbox>
+                                        <checkbox id="l1" label="ขายได้"/>
+                                        <checkbox id="l2" label="เพิ่มหมวดและสินค้าได้"/>
+                                        <checkbox id="l3" label="เพิ่มหมวดและพนักงานได้"/>
+                                        <checkbox id="l4" label="ดูยอดและใบเสร็จย้อนหลังได้"/>
+                                        <checkbox id="l5" label="สร้างบัตรส่วนลดได้"/>
+                                    </hbox>
+                                    <button id="save" image="/ext/images/icon/save.png" mold="trendy" />
+                                </row>
+                            </rows>
+                        </grid>
+                        <h:br />
+                        <h:br />
+                        <grid>
+                            <columns>
+                                <column label="แสดงรายการกลุ่มพนักงานทั้งหมด" align="center"/>
+                            </columns>
+                            <rows>
+                            </rows>
+                        </grid>
+                        <grid id="listgroup">
+                            <columns>
+                                <column label="ลำดับ" align="center" />
+                                <column label="ชื่อกลุ่ม" align="center" />
+                                <column label="l1" align="center" />
+                                <column label="l2" align="center" />
+                                <column label="l3" align="center" />
+                                <column label="l4" align="center"/>
+                                <column label="l5" align="center" />
+                                <column align="center" />
+                            </columns>
+                            <rows>
+                            </rows>
+                        </grid>
+                    </div>
+                </window>
+            </tabpanel>
+            <tabpanel>
+                <include mode="defer" src="/newemployee.zul" />
+            </tabpanel>
+            <tabpanel>
+                <include mode="defer" src="/newmodecus.zul" />
+            </tabpanel>
+            <tabpanel>
+                <include mode="defer" src="/newcus.zul" />
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</zk:grails>

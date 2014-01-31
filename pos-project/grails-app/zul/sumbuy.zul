@@ -1,0 +1,58 @@
+<?page title="Pos-Online"?>
+<zk:bootstrap/>
+<zk:grails>
+    <include mode="defer" src="/index.zul" />
+    <tabbox id="tb">
+        <tabs id="tabs">
+            <tab id="A" label="ยอดซื้อ" />
+            <tab id="B" label="ยอดขาย" />
+            <tab id="C" label="ใบเสร็จย้อนหลัง" />
+        </tabs>
+        <tabpanels>
+            <tabpanel>
+                <window apply="pos.project.SumbuyComposer" visible="false">
+                    <div align="center">
+                        <vbox align="center">
+                            <hbox>
+                                <label value="เลือก เดือน/ปี ที่ต้องการค้นหา" />
+                                <combobox id="search" fulfill="onOpen" placeholder="ใส่วันเดือนปีที่ต้องการค้นหา" />
+                            </hbox>
+                            <hbox>
+                                <button label="เลือกทั้งหมด" id="checkall" disabled="true" image="/ext/images/icon/checkall.png" mold="trendy"/>
+                                <button label="ลบ" id="delete" disabled="true" image="/ext/images/icon/cancle.png" mold="trendy" />
+                            </hbox>
+                        </vbox>
+                        <grid>
+                            <columns>
+                                <column label="แสดงรายการยอดซื้อ" align="center" />
+                            </columns>
+                            <rows>
+                            </rows>
+                        </grid>
+                        <grid id="listbuy" mold="paging" pageSize="50">
+                            <columns>
+                                <column label="วันที่ซื้อ" align="center" sort="auto" width="12%"/>
+                                <column label="รหัสสินค้า" align="center" sort="auto" width="12%"/>
+                                <column label="ชื่อสินค้า" align="center" sort="auto" width="12%"/>
+                                <column label="หมวดสินค้า" align="center" sort="auto" width="12%"/>
+                                <column label="ผู้ซื้อเข้า" align="center" sort="auto" width="12%"/>
+                                <column label="ราคาต่อหน่วย" align="center" sort="auto" width="12%"/>
+                                <column label="จำนวน" align="center" sort="auto" width="12%" />
+                                <column label="รวม" align="center" sort="auto" width="12%"/>
+                                <column align="center" width="4%" />
+                            </columns>
+                            <rows>
+                            </rows>
+                        </grid>
+                    </div>
+                </window>
+            </tabpanel>
+            <tabpanel>
+                <include mode="defer" src="/sumsell.zul" />
+            </tabpanel>
+            <tabpanel>
+                <include mode="defer" src="/billed.zul" />
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</zk:grails>

@@ -1,0 +1,135 @@
+<?page title="Pos-Online"?>
+<zk:bootstrap/>
+<zk:grails>
+    <include mode="defer" src="/index.zul" />
+    <window apply="pos.project.SellComposer" visible="false">
+        <div align="right">
+            <label value="รวม"/>
+            <doublebox id="sumprice" disabled="true" format="#,##0.##" />
+        </div>
+        <div align="right">
+            <button label="เริ่มขายใหม่" id="newpage" image="/ext/images/icon/refresh.png" mold="trendy"/>
+            <button label="จบการขาย" id="finish" image="/ext/images/icon/finish.png" mold="trendy"/>
+            <button label="พิมพ์ใบเสร็จ" id="printbill" image="/ext/images/icon/bill.gif" mold="trendy"/>
+        </div>
+        <div align="center">
+            <grid id="listinput">
+                <columns>
+                    <column align="right" />
+                    <column align="left" />
+                    <column align="right" />
+                    <column align="left" />
+                    <column align="right" />
+                    <column align="left" />
+                </columns>
+                <rows>
+                    <row>
+                        <label value="รหัสลูกค้า"/>
+                        <textbox id="idcus" instant="true" width="200px" />
+                        <label value="ชื่อลูกค้า"/>
+                        <textbox id="namecus" width="200px" disabled="true"/>
+                        <label value="วัน-เดือน-ปี"/>
+                        <datebox id="imday" locale="de_DE" format="dd/MM/yyyy" width="200px" disabled="true"/>
+                    </row>
+                    <row>
+                        <label value="รหัสบิล"/>
+                        <doublebox id="idbill" width="200px" disabled="true" />
+                        <label value="รหัสพนักงาน"/>
+                        <textbox id="idem" width="200px" disabled="true" />
+                        <label value="ชื่อพนักงาน"/>
+                        <textbox id="nameem" width="200px" disabled="true" />
+                    </row>
+                    <row>
+                        <label value="จำนวน"/>
+                        <intbox id="count" instant="true" value="1" width="100px" />
+                        <label value="รหัสสินค้า"/>
+                        <textbox id="idproduct" instant="true" width="200px" />
+                        <label value="รหัสบัตรส่วนลด"/>
+                        <textbox id="idgift" instant="true" width="200px" />
+                    </row>
+                    <row spans="6">
+                        <hbox>
+                            <radiogroup id="vatorno">
+                                <radio label="คิดVAT" selected="true"/>
+                                <radio label="ไม่คิดVAT"/>
+                            </radiogroup>
+                            <radiogroup id="toonorsent">
+                                <radio label="ขายปลีก" selected="true"/>
+                                <radio label="ขายส่ง"/>
+                            </radiogroup>
+                        </hbox>
+                    </row>
+                </rows>
+            </grid>
+            <grid id="listbuy">
+                <columns>
+                    <column label="ลำดับ" align="center" width="7%" />
+                    <column label="รายการสินค้า" align="center" width="50%" />
+                    <column label="จำนวน" align="center" width="22%" />
+                    <column label="ราคาต่อหน่วย" align="center" width="22%" />
+                    <column label="รวม" align="center" width="22%" />
+                    <column align="center" width="5%" />
+                </columns>
+                <rows>
+                </rows>
+            </grid>
+            <vbox>
+                <grid>
+                    <columns>
+                        <column align="center"  width="7%" />
+                        <column align="center"  width="50%" />
+                        <column align="center"  width="22%" />
+                        <column align="center"  width="22%" />
+                        <column align="center"  width="22%" />
+                        <column align="center"  width="5%" />
+                    </columns>
+                    <rows>
+                        <row spans="4">
+                            <label value="vat 7 %"/>
+                            <label value="0" id="vatpricefromlist"/>
+                            <label/>
+                        </row>
+                        <row spans="4">
+                            <label value="ส่วนลด"/>
+                            <label value="0" id="downpricefromlist"/>
+                            <label/>
+                        </row>
+                        <row spans="4">
+                            <label value="รวมทั้งสิ้น"/>
+                            <label value="0" id="sumpricefromlist"/>
+                            <label />
+                        </row>
+                    </rows>
+                </grid>
+            </vbox>
+        </div>
+    </window>
+    <window id="finishpage" visible="false" border="normal">
+        <grid width="600px">
+            <columns>
+                <column align="center" />
+                <column align="center" />
+            </columns>
+            <rows>
+                <row spans="2">
+                    <label value="จบการขาย"/>
+                </row>
+                <row>
+                    <label value="ยอดรวม"/>
+                    <doublebox id="sumfinish" instant="true" zclass="mydb" disabled="true" format="#,##0.##" />
+                </row>
+                <row>
+                    <label value="ชำระ"/>
+                    <doublebox id="payfinish" instant="true" zclass="mydb" format="#,##0.##" />
+                </row>
+                <row>
+                    <label value="ทอน"/>
+                    <doublebox id="tonfinish" instant="true" zclass="mydb" disabled="true" format="#,##0.##" />
+                </row>
+                <row spans="2">
+                    <button id="okfinish" label="OK" mold="trendy" disabled="true"/>
+                </row>
+            </rows>
+        </grid>
+    </window>
+</zk:grails>

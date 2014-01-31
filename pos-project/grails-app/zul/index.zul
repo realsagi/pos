@@ -1,0 +1,76 @@
+<?page title="Pos-Online"?>
+<zk:bootstrap/>
+
+<zk:grails>
+ 
+    <bs:navbar brand="Pos-Online" 
+    left="[ sell:'หน้าร้าน',
+            newmodestock:'สต๊อกสินค้า',
+            modeemployee:'บุคคล',
+            sumbuy:'รายงาน',
+            gencard:'รายการ'
+    ]">
+    </bs:navbar>
+    <div>
+        <h:br/>
+        <h:br/>
+        <h:br/>
+    </div>
+    <div align="right" apply="pos.project.IndexComposer">
+        <hbox>
+            <image src="/ext/images/icon/useronline.png" class="media-object"/>
+            <label value="[" style="color:blue;font-size:15px"/>
+            <label id="useronline" style="color:blue;font-size:15px"/>
+            <label value="]" style="color:blue;font-size:15px"/>
+            <image src="/ext/images/icon/grouponlines.png" class="media-object"/>
+            <label value="[" style="color:blue;font-size:15px"/>
+            <label id="groupuse" style="color:blue;font-size:15px"/>
+            <label value="]" style="color:blue;font-size:15px"/>
+            <button id="logout" class="btn btn-default dropdown-toggle" image="/ext/images/icon/logout.png"  mold="trendy" width="125px" height="30px" label="ออกจากระบบ"  style="color:red;font-size:13px;font-weight:bold"/>  
+        </hbox>
+    </div>   
+
+    <window apply="pos.project.IndexComposer" title="Pos-Online" visible="false">
+            <menubar scrollable="true" autodrop="true">
+            <menu label="สต๊อกสินค้า" >
+                <menupopup>
+                    <menuitem label="เพิ่มหมวดสินค้าใหม่" href="/newmodestock.zul" image="/ext/images/icon/grouppro.gif" />
+                    <menuitem label="เพิ่มสินค้าใหม่" href="/newstock.zul" image="/ext/images/icon/addpro.gif" />
+                </menupopup>
+            </menu>
+            <menu label="บุคคล">
+                <menupopup>
+                    <menuitem label="เพิ่มกลุ่มพนักงานใหม่" href="/modeemployee.zul" image="/ext/images/icon/newgroup.png" />
+                    <menuitem label="เพิ่มพนักงานใหม่" href="/newemployee.zul" image="/ext/images/icon/newem.jpg" />
+                    <menuitem label="เพิ่มกลุ่มลูกค้า" href="/newmodecus.zul" image="/ext/images/icon/newgroup.png" />
+                    <menuitem label="เพิ่มลูกค้าใหม่" href="/newcus.zul" image="/ext/images/icon/newem.jpg" />
+                </menupopup>
+            </menu>
+            <menu label="รายงาน">
+                <menupopup>
+                    <menuitem label="ยอดซื้อ" href="/sumbuy.zul" image="/ext/images/icon/buy.gif" />
+                    <menuitem label="ยอดขาย" href="/sumsell.zul" image="/ext/images/icon/sell.png" />
+                    <menuitem label="ใบเสร็จย้อนหลัง" href="/billed.zul" image="/ext/images/icon/bill.jpg" />
+                </menupopup>
+            </menu>
+            <menu label="รายการ" >
+                <menupopup>
+                    <menuitem label="สร้างบัตร/รายการบัตร(บัตรส่วนลด)" href="/gencard.zul" image="/ext/images/icon/card.gif"/>
+                    </menupopup>
+                </menu> 
+            </menubar> 
+                <div align="right">
+                    <hbox>
+                    <image src="/ext/images/icon/useronline.png" class="media-object"/>
+                    <label value="[" style="color:blue;font-size:15px"/>
+                    <label id="useronline" style="color:blue;font-size:15px"/>
+                    <label value="]" style="color:blue;font-size:15px"/>
+                    <image src="/ext/images/icon/grouponlines.png" class="media-object"/>
+                    <label value="[" style="color:blue;font-size:15px"/>
+                    <label id="groupuse" style="color:blue;font-size:15px"/>
+                    <label value="]" style="color:blue;font-size:15px"/>
+                    <button id="logout" class="btn btn-default dropdown-toggle" image="/ext/images/icon/logout.png"  mold="trendy" width="125px" height="30px" label="ออกจากระบบ"  style="color:red;font-size:13px;font-weight:bold"/>  
+                    </hbox>
+                </div>   
+    </window>
+</zk:grails>

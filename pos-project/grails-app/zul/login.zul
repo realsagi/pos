@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+    <style> 
+        body{
+            background-image:url('ext/images/bg/bglogin.jpg');
+        }
+    </style>
+    <h:br />
+    <h:br />
+    <h:br />
+    <h:br />
+    <h:br />
+    <h:br />
+    <h:br />
+    <h:br />
+    <h:br />
+    <h:br />
+    <h:br />
+    <div align="center" >
+    <window apply="pos.project.LoginComposer" width="300px" height="150px">
+
+        <div align="center">
+                <vbox>
+                    <textbox id="user" placeholder="Username:" style="font-size:20px"/>
+                    <textbox type="password" id="pass" placeholder="Passwords:" style="font-size:20px" />
+                </vbox>
+                <h:br />
+                <hbox>
+                    <button label="Login" id="login" mold="trendy" style="font-size:20px" />
+                    <button label="Clear" id="clear" mold="trendy" style="font-size:20px" />
+                </hbox>
+        </div>
+
+    </window>
+    </div>
+</zk>

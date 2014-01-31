@@ -1,0 +1,51 @@
+<?page title="Pos-Online"?>
+<zk:bootstrap/>
+<zk:grails>
+    <include mode="defer" src="/index.zul" />
+    <tabbox id="tb">
+    <tabs id="tabs">
+        <tab id="A" label="เพิ่มหมวดสินค้าใหม่" />
+        <tab id="B" label="เพิ่มสินค้าใหม่" />
+    </tabs>
+    <tabpanels>
+        <tabpanel>
+            <window apply="pos.project.NewmodestockComposer" visible="false">
+                <hbox>
+                    <div align="left">
+                        <vbox align="center">
+                            <h:h1><label value="ใส่ชื่อหมวดสินค้า" class="label label-default" /></h:h1>
+                            <textbox id="namemodestock" class="form-control input-lg"  />
+                            <hbox>
+                                <button id="submit" sclass="btn-success" image="/ext/images/icon/save.png" mold="trendy" />
+                                <button id="clear" sclass="btn-success" image="/ext/images/icon/cancle.png" mold="trendy" />
+                            </hbox>
+                        </vbox>
+                        <h:br/>
+                    </div>
+                    <vbox>
+                        <grid>
+                            <columns>
+                                <column label="แสดงรายการหมวดสินค้าทั้งหมด" align="center" />
+                            </columns>
+                            <rows>
+                            </rows>
+                        </grid>
+                        <grid id="listnamemode" >
+                            <columns>
+                                <column label="ลำดับ" align="center" />
+                                <column label="ชื่อโหมดสินค้า" align="center"/>
+                                <column label="ลบ" align="center"/>
+                            </columns>
+                            <rows>
+                            </rows>
+                        </grid>
+                    </vbox>
+                </hbox>
+            </window>
+        </tabpanel>
+        <tabpanel>
+            <include mode="defer" src="/newstock.zul" />
+        </tabpanel>
+    </tabpanels>
+</tabbox>
+</zk:grails>

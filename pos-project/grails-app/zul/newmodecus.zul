@@ -1,0 +1,30 @@
+<?page title="Pos-Online"?>
+<zk:bootstrap/>
+<zk:grails>
+    <window apply="pos.project.NewmodecusComposer" visible="false">    
+        <div align="center">
+            <label value="ใส่ชื่อกลุ่มลูกค้าใหม่" />
+            <textbox id="namegroupcustomer" />
+            <button id="submit" image="/ext/images/icon/save.png" mold="trendy" />
+            <button id="clear" image="/ext/images/icon/cancle.png" mold="trendy" />
+            <h:br />
+            <h:br />
+            <grid>
+                <columns>
+                    <column label="แสดงรายการกลุ่มลูกค้าทั้งหมด" align="center" />
+                </columns>
+                <rows>
+                </rows>
+            </grid>
+            <grid id="listnamegroup" >
+                <columns>
+                    <column label="ลำดับ" align="center" />
+                    <column label="ชื่อกลุ่มลูกค้า" align="center" />
+                    <column label="ลบ" align="center" />
+                </columns>
+                <rows>
+                </rows>
+            </grid>
+        </div>
+    </window>
+</zk:grails>

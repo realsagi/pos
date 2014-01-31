@@ -1,0 +1,123 @@
+<?page title="Pos-Online"?>
+<zk:bootstrap/>
+<zk:grails>
+	<window apply="pos.project.NewstockComposer" visible="false">
+                <h:br />
+                <h:br />
+                <div align="center">
+                    <grid>
+                        <columns>
+                            <column label="กรอกข้อมูลสินค้า" align="center" />
+                        </columns>
+                        <rows>
+                        </rows>
+                    </grid>
+                    <grid id="listnamemode" sclass="GridLayoutNoBorder">
+                        <columns>
+                            <column align="right" />
+                            <column align="left" />
+                            <column align="right" />
+                            <column align="left" />
+                            <column align="right" />
+                            <column align="left" />
+                        </columns>
+                        <rows>
+                            <row>
+                                <label value="รหัสสินค้า*"/>
+                                <textbox id="barcod" instant="true"/>
+                                <label value="ชื่อสินค้า*"/>
+                                <textbox id="nameproduct"/>
+                                <label value="หมวดสินค้า*" />
+                                <combobox id="listmode" fulfill="onOpen" placeholder="เลือกหมวดสินค้า"/>
+                            </row>
+                            <row>
+                                <label value="ราคาทุน*"/>
+                                <hbox>
+                                    <doublebox id="pricetoon" format="0.##"/><label value="บาท"/>
+                                </hbox>
+                                  <label value="ราคาขายปลีก*"/>
+                                <hbox>
+                                    <doublebox id="priceperunit" format="0.##"/><label value="บาท"/>
+                                </hbox>
+                                <label value="ราคาขายส่ง*"/>
+                                <hbox>
+                                    <doublebox id="priecbig" format="0.##"/><label value="บาท"/>
+                                </hbox>
+                            </row>
+                            <row>
+                                <label value="จำนวน*"/>
+                                <hbox id="addcount">
+                                    <intbox id="countproduct" instant="true"/>
+                                </hbox>
+                                <label value="หน่วยสินค้า*"/>
+                                <textbox id="txtnameunit"/>
+                                <label value="วันที่นำเข้า*"/>
+                                <datebox id="dateimport" locale="de_DE" format="dd/MM/yyyy" placeholder="เลือกวันที่นำเข้า"/>
+                                </row>
+                            <row>
+                                <label value="วันหมดอายุ*"/>
+                                <datebox id="extdat" locale="de_DE" format="dd/MM/yyyy" placeholder="เลือกวันหมดอายุ"/>
+                                <label value="รายละเอียดเพื่มเติม"/>
+                                <textbox id="detail"/>
+                                <label  />
+                                <label  />
+                            </row>
+                        </rows>
+                    </grid>
+                    <h:br />
+                    <hbox>
+                        <button id="save" image="/ext/images/icon/save.png" mold="trendy" />
+                        <button id="cancle" image="/ext/images/icon/cancle.png" mold="trendy" />
+                    </hbox>
+                    <h:hr />
+                    <label value="ค้นหาตามหมวดสินค้า" />
+                    <combobox id="listmode2" fulfill="onOpen" placeholder="เลือกหมวดสินค้า"/>
+                    <h:br />
+                    <h:br />
+                    <grid>
+                        <columns>
+                            <column label="แสดงรายการสินค้าตามกลุ่ม" align="center"/>
+                        </columns>
+                        <rows>
+                        </rows>
+                    </grid>
+                    <grid id="listproduct" mold="paging" pageSize="20">
+                        <columns>
+                            <column align="center" label="รหัสสินค้า" sort="auto" />
+                            <column align="center" label="ชื่อสินค้า" sort="auto" />
+                            <column align="center" label="หมวดสินค้า" sort="auto" />
+                            <column align="center" label="ราคาทุน" sort="auto" />
+                            <column align="center" label="ราคาขายปลีก" sort="auto" />
+                            <column align="center" label="ราคาขายส่ง" sort="auto" />
+                            <column align="center" label="จำนวน" sort="auto" />
+                            <column align="center" label="วันที่นำเข้า"  />
+                            <column align="center" label="วันหมดอายุ"  />
+                            <column align="center"  />
+                        </columns>
+                        <rows>
+                        </rows>
+                    </grid>
+                </div>
+
+            </window>
+
+            <window id="windowpop" visible="false" title="เพิ่มจำนวนสินค้า" border="normal">
+                <vbox>
+                    <label value="กรุณาเพิ่มจำนวนสินค้าค่ะ"/>
+                    <hbox>
+                        <intbox id="newcountpro" value="0" />
+                        <button id="savenewcount" label="OK" />
+                    </hbox>
+                </vbox>
+            </window>
+
+            <window id="discount" visible="false" title="ลดจำนวนสินค้า" border="normal">
+                <vbox>
+                    <label value="กรุณาลดจำนวนสินค้าค่ะ"/>
+                    <hbox>
+                        <intbox id="disnewcount" value="0" />
+                        <button id="savedisnew" label="OK" />
+                    </hbox>
+                </vbox>
+            </window>
+</zk:grails>
